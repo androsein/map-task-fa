@@ -3,7 +3,7 @@
     <b-alert class="position-absolute m-4 bottom-0 right-0 z-index-99" v-model="alert.show" :variant="alert.variant" fade>
         {{ alert.message }}
       </b-alert>
-    <b-container class="mt-4">
+    <b-container v-if="$store.getters.key" class="mt-4">
       <div class="mx-auto">
         <div class="d-flex justify-content-center rounded-lg overflow-hidden">
           <GmapMap
@@ -62,15 +62,32 @@
         </b-table>
       </div>
     </b-container>
+    <b-container v-if="!$store.getters.key" class="text-center mt-4">
+      <div class="bg-warning text-dark rounded-lg p-4">
+        <h4 class="p-0 m-0">برای استفاده از نقشه گوگل نیاز به یک API key دارید!</h4>
+      </div>
+
+      <b-form class="w-50 mx-auto mt-4">
+        <label for="api-key">API key خود را وارد کنید:</label>
+        <b-input 
+          id="api-key" 
+          type="text" 
+          placeholder="API key"
+          class="text-center"
+          v-model="apiKey"/>
+          <b-button variant="success" class="mt-2" block @click="addApiKey">حله!</b-button>
+      </b-form>
+    </b-container>
   </div>
 </template>
 
 <script>
-
+import * as VueGoogleMaps from 'vue2-google-maps'
 export default {
   name: "App",
   data(){
     return{
+      apiKey: null,
       marker: {
         lat: 0,
         lng:0,
@@ -142,6 +159,19 @@ export default {
         variant
       }
       setTimeout(() => this.alert.show = false, 2000)
+    },
+    addApiKey(){
+      if(this.apiKey){
+        this.$store.commit('changeGoogleKey', this.apiKey)
+      }
+      VueGoogleMaps.loadGmapApi({
+        load: {
+          key: this.$store.state.googleKey,
+          region: 'FA',
+          language: 'fa',
+        },
+      })
+
     }
   }
 };
