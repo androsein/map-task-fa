@@ -1,0 +1,33 @@
+@font-face {
+    font-family: Vazir;
+    src: url('./fonts/Vazir-Regular-FD.eot');
+    src: url('./fonts/Vazir-Regular-FD.eot?#iefix') format('embedded-opentype'),
+         url('./fonts/Vazir-Regular-FD.woff2') format('woff2'),
+         url('./fonts/Vazir-Regular-FD.woff') format('woff'),
+         url('./fonts/Vazir-Regular-FD.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+$font-family-sans-serif: Vazir;
+$border-radius-lg: .5rem;
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import 'node_modules/bootstrap-vue/src/index.scss';    
+
+.map {
+    width: 1000px; 
+    height: 350px;
+}
+
+.bottom-0 {
+    bottom: 0;
+}
+
+.right-0 {
+    right: 0;
+}
+
+tbody tr :hover {
+    cursor: pointer;
+}
