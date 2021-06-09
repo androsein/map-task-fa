@@ -11,17 +11,7 @@ import '/src/assets/main.scss'
 
 Vue.use(BootstrapVue)
 
-console.log(store.getters.key);
-
 import * as VueGoogleMaps from 'vue2-google-maps'
-// Vue.use(VueGoogleMaps, {
-//   load: {
-//     key: store.state.googleKey,
-//     region: 'FA',
-//     language: 'fa',
-//   },
-// })
-
 Vue.use(VueGoogleMaps)
 
 

@@ -163,14 +163,12 @@ export default {
     addApiKey(){
       if(this.apiKey){
         this.$store.commit('changeGoogleKey', this.apiKey)
-      }
-      VueGoogleMaps.loadGmapApi({
-        load: {
-          key: this.$store.state.googleKey,
+        VueGoogleMaps.loadGmapApi({
+          key: this.$store.getters.key,
           region: 'FA',
           language: 'fa',
-        },
-      })
+        })
+      }
 
     }
   }
