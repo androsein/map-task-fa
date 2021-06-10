@@ -52,13 +52,6 @@ router.beforeEach((to, from, next) => {
       }
       next()
     });
-
-
-  // if(to.matched.some(record => record.meta.needApi)) {
-    
-  // }else{
-  //   next();
-  // }
 })
 
 export default router;
