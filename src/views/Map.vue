@@ -144,23 +144,6 @@ export default {
         region: "FA",
         language: "fa",
       });
-      // checkApi(this.$store.getters.key)
-      //   .then(() => {
-      //     VueGoogleMaps.loadGmapApi({
-      //       key: this.$store.getters.key,
-      //       region: "FA",
-      //       language: "fa",
-      //     });
-      //   })
-      //   .catch(error =>{
-      //     if(error.error) {
-      //       this.$store.dispatch('showAlert', {
-      //         message: 'برای استفاده از نقشه گوگل نیاز به یک API key دارید!',
-      //         variant: 'danger'
-      //       })
-      //       this.$router.push({name: 'Home'});
-      //     }
-      //   });
     }
 }
 </script>
