@@ -58,11 +58,5 @@ export default {
         });
     }
   },
-  mounted(){
-    // checkApi(this.$store.getters.key)
-    //   .then(() => {
-    //     this.$router.push({name: 'Map'});
-    //   });
-  }
 }
 </script>
